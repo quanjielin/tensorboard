@@ -1,0 +1,15 @@
+https://github.com/tensorflow/tensorboard/blob/master/DEVELOPMENT.md
+
+quanlin@quanlin:~/tensorflow/tensorboard/tensorboard$ virtualenv tf
+quanlin@quanlin:~/tensorflow/tensorboard/tensorboard$ source tf/bin/activate
+(tf) quanlin@quanlin:~/tensorflow/tensorboard/tensorboard$ bazel build tensorboard
+
+(tf) quanlin@quanlin:~/tensorflow/tensorboard$ ./bazel-bin/tensorboard/tensorboard --logdir /tmp/mnist_tutorial
+
+
+#https://stackoverflow.com/questions/40830085/tensorboard-can-not-read-summaries-on-google-cloud-storage
+(tf) quanlin@quanlin:~/tensorflow/tensorboard$ ./bazel-bin/tensorboard/tensorboard --logdir=gs://tf_mnist_logs1/mnist_tutorial
+
+
+quanlin@quanlin:~/tensorflow/tf-dev-summit-tensorboard-tutorial$ cd ~/.local/lib/python3.6/site-packages/tensorboard
+quanlin@quanlin:~/.local/lib/python3.6/site-packages/tensorboard$ python3 main.py --logdir=gs://tf_mnist_logs1/mnist_tutorial
