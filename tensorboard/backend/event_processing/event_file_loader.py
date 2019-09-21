@@ -55,6 +55,8 @@ class RawEventFileLoader(object):
     Yields:
       All event proto bytestrings in the file that have not been yielded yet.
     """
+    print("**********Loading events from", self._file_path)
+
     logger.debug('Loading events from %s', self._file_path)
 
     # GetNext() expects a status argument on TF <= 1.7.

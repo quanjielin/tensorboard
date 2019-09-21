@@ -108,6 +108,7 @@ def standard_tensorboard_wsgi(flags, plugin_loaders, assets_zip_provider):
   :type plugin_loaders: list[base_plugin.TBLoader]
   :rtype: TensorBoardWSGI
   """
+  print("********standard_tensorboard_wsgi")
   data_provider = None
   multiplexer = None
   reload_interval = flags.reload_interval
@@ -133,6 +134,7 @@ def standard_tensorboard_wsgi(flags, plugin_loaders, assets_zip_provider):
     multiplexer = _DbModeMultiplexer(flags.db, db_connection_provider)
   else:
     # Regular logdir loading mode.
+    print("********standard_tensorboard_wsgi:EventMultiplexer")
     multiplexer = event_multiplexer.EventMultiplexer(
         size_guidance=DEFAULT_SIZE_GUIDANCE,
         tensor_size_guidance=tensor_size_guidance_from_flags(flags),

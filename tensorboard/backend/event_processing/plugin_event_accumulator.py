@@ -270,6 +270,8 @@ class EventAccumulator(object):
     if self._first_event_timestamp is None:
       self._first_event_timestamp = event.wall_time
 
+    #print("********_ProcessEvent", event)
+
     if event.HasField('file_version'):
       new_file_version = _ParseFileVersion(event.file_version)
       if self.file_version and self.file_version != new_file_version:

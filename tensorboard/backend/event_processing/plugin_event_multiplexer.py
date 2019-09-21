@@ -185,6 +185,7 @@ class EventMultiplexer(object):
     Returns:
       The `EventMultiplexer`.
     """
+    print("*********AddRunsFromDirectory")
     logger.info('Starting AddRunsFromDirectory: %s', path)
     for subdir in io_wrapper.GetLogdirSubdirectories(path):
       logger.info('Adding run from directory %s', subdir)

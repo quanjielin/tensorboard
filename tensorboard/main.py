@@ -42,13 +42,16 @@ from tensorboard import program
 from tensorboard.compat import tf
 from tensorboard.plugins import base_plugin
 from tensorboard.util import tb_logging
-
+import logging
 
 logger = tb_logging.get_logger()
 
 def run_main():
+  print("******run_main start")
   """Initializes flags and calls main()."""
   program.setup_environment()
+
+  logger.setLevel(logging.DEBUG)
 
   if getattr(tf, '__version__', 'stub') == 'stub':
     print("TensorFlow installation not found - running with reduced feature set.",

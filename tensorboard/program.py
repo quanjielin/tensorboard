@@ -293,6 +293,7 @@ class TensorBoard(object):
 
 
   def _make_server(self):
+    print("**********_make_server")
     """Constructs the TensorBoard WSGI app and instantiates the server."""
     app = application.standard_tensorboard_wsgi(self.flags,
                                                 self.plugin_loaders,
